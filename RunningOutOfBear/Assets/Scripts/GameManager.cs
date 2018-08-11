@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 
     public List<BulletMovement> bulletList = new List<BulletMovement>();
 
+    public List<string> abilities = new List<string>();
 
     private Vector3 screenWrapOrigional;
     private Dictionary<string, int> files = new Dictionary<string, int>();
@@ -30,8 +31,9 @@ public class GameManager : MonoBehaviour {
     {
         screenWrapOrigional = screenWrap.transform.position;
         fps = 100;
-        StartCoroutine("GameLoop");
         FillDictionary();
+        StartCoroutine("GameLoop");
+
     }
 
 
