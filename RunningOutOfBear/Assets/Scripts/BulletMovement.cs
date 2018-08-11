@@ -17,4 +17,9 @@ public class BulletMovement : MonoBehaviour {
     public void MoveBullet(float fps) {
         transform.position = transform.position + dir * moveSpeed*fps;
     }
+
+    public void DestroyBullet() {
+        gameManager.bulletList.Remove(gameObject.GetComponent<BulletMovement>());
+        Destroy(gameObject);
+    }
 }

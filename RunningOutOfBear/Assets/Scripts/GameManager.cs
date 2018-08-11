@@ -54,8 +54,7 @@ public class GameManager : MonoBehaviour {
         {
             float currentRate = 1 / fps;
 
-            playerFPScounter.text = ""+((int)fps);
-            otherFPScounter.text = "" + 11;//((int)otherPlayer.fps);
+            updateFiles();
 
             for (int i = 0; i < bulletList.Count; i++)
             {
@@ -82,11 +81,17 @@ public class GameManager : MonoBehaviour {
     }
 
     private void updateFiles() {
+        //updates appropriate variables
+        playerFPScounter.text = "" + ((int)fps);
+        otherFPScounter.text = "" + 11;//((int)otherPlayer.fps);
+
         FPScounter(files["fps"]);
         ScreenWrapCounter(files["screenWrap"]);
     }
 
     private void FPScounter(int count) {
+
+
         if (count == 0)
         {
             playerFPScounter.enabled = false;
