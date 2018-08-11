@@ -16,7 +16,14 @@ public class ScreenWrap : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector3 objDir = collision.GetComponent<BulletMovement>().dir;
+        Vector3 objDir;
+        if (collision.tag == "bullet")
+        {
+             objDir= collision.GetComponent<BulletMovement>().dir;
+        }
+        else
+            return;
+
         print(objDir.x);
         if (horizontal)
         {
